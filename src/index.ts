@@ -1,2 +1,3 @@
-import a from './test'
-console.log(a)
+import fact from "./test";
+
+console.log(fact(6));

@@ -1,6 +1,6 @@
 import webpack from "webpack";
 
-const buildLoader = (): webpack.RuleSetRule[] => {
+export const buildLoader = (): webpack.RuleSetRule[] => {
   const typescriptLoader = {
     test: /\.tsx?$/,
     use: "ts-loader",
@@ -9,5 +9,3 @@ const buildLoader = (): webpack.RuleSetRule[] => {
 
   return [typescriptLoader];
 };
-
-export default buildLoader;
