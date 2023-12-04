@@ -1,16 +1,19 @@
-import { Suspense, useContext } from "react";
+import { Suspense } from "react";
 import { Link, Route, Routes } from "react-router-dom";
-import { MainPageAsync } from "./pages/MainPage/MainPage.async";
-import { AboutPageAsync } from "./pages/AboutPage/AboutPage.async";
+
+import { useTheme } from "./theme/useTheme";
+import { className } from "./helpers/className";
 
 import "./styles/index.css";
-import { useTheme } from "./theme/useTheme";
+
+import { MainPageAsync } from "./pages/MainPage/MainPage.async";
+import { AboutPageAsync } from "./pages/AboutPage/AboutPage.async";
 
 const App = () => {
   const { theme, toggleTheme } = useTheme();
 
   return (
-    <div className={`app ${theme}`}>
+    <div className={className("app", { hovered: true }, [theme, "cl1", "cl2"])}>
       <button onClick={toggleTheme}>TOGGLE</button>
       <Link to={"/"}>Main Page</Link>
       <Link to={"/about"}>About Page</Link>
